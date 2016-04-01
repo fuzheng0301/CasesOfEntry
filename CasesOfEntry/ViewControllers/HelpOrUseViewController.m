@@ -39,9 +39,11 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     if (_isHelp == YES) {
+        self.title = @"帮助中心";
         textView.text = helpStr;
     }
     else{
+        self.title = @"使用协议";
         textView.text = useStr;
     }
 }

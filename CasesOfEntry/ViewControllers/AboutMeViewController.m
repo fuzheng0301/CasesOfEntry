@@ -118,6 +118,11 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    while ([cell.contentView.subviews lastObject])
+    {
+        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.textLabel.textColor = [UIColor colorWithWhite:0.306 alpha:1.000];
@@ -184,7 +189,6 @@
         else{
             //帮助中心
             helpOrUseVC.isHelp = YES;
-            helpOrUseVC.title = @"帮助中心";
             [self.navigationController pushViewController:helpOrUseVC animated:YES];
         }
     }
@@ -194,7 +198,6 @@
 -(void)didClickBtn
 {
     helpOrUseVC.isHelp = NO;
-    helpOrUseVC.title = @"使用协议";
     [self.navigationController pushViewController:helpOrUseVC animated:YES];
 }
 
