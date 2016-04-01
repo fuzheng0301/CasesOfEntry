@@ -16,19 +16,12 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
     [NSThread sleepForTimeInterval:0.5];//设置启动页面时间
     
-    if([UINavigationBar conformsToProtocol:@protocol(UIAppearanceContainer)]) {
-        [UINavigationBar appearance].tintColor = [UIColor whiteColor];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldSystemFontOfSize:18], NSForegroundColorAttributeName : [UIColor whiteColor]}];
-        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(51)/255.f green:(171)/255.f blue:(160)/255.f alpha:1.f]];
-        [[UINavigationBar appearance] setTranslucent:NO];
-    }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     InfoViewController *vc = [[InfoViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];

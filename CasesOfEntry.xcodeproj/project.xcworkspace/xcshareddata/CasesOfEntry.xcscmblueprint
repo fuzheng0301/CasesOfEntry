@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "256F0E119905933A336AE48EAED868AE130666C1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "256F0E119905933A336AE48EAED868AE130666C1" : 0,
+    "827848E6A2D34C0B63E4BFE842C2442A34668228" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C2734FA3-7E27-4724-B3D8-FEE6EBD804FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "256F0E119905933A336AE48EAED868AE130666C1" : "CasesOfEntry\/",
+    "827848E6A2D34C0B63E4BFE842C2442A34668228" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CasesOfEntry",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CasesOfEntry.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fuzheng0301\/CasesOfEntry.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "256F0E119905933A336AE48EAED868AE130666C1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fuzheng0301\/My-Repository.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "827848E6A2D34C0B63E4BFE842C2442A34668228"
+    }
+  ]
+}
