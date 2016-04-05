@@ -28,7 +28,7 @@
     
     textView = [[UITextView alloc]initWithFrame:CGRectMake(10, 10, Dewidth-20, Deheight-84)];
     [textView setFont:[UIFont systemFontOfSize:16.0]];
-    textView.userInteractionEnabled = NO;
+    textView.editable = NO;
     textView.backgroundColor = [UIColor colorWithRed:239 / 255.0 green:239 / 255.0 blue:239 / 255.0 alpha:1];
     [self.view addSubview:textView];
     
