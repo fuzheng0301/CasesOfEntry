@@ -301,7 +301,7 @@
     NSDictionary *user = @{@"id": idTF.text, @"name": nameTF.text, @"age": ageTF.text, @"sex":sexTF.text, @"phone":phoneTF.text, @"describe":describeTF.text};
     [store putObject:user withId:idTF.text intoTable:tableName];
     //先取出原来的
-    NSDictionary *dic = [store getObjectById:@"1" fromTable:@"user_table"];
+    NSDictionary *dic = [store getObjectById:@"101101011244101101011244" fromTable:@"user_table"];
     if (dic) {
         [array removeAllObjects];
         [nameArray removeAllObjects];
@@ -321,7 +321,7 @@
     
     NSDictionary *dict = @{@"id":array,@"table":nameArray};
     [store createTableWithName:@"user_table"];
-    [store putObject:dict withId:@"1" intoTable:@"user_table"];
+    [store putObject:dict withId:@"101101011244101101011244" intoTable:@"user_table"];
     
 }
 

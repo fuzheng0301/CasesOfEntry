@@ -41,13 +41,9 @@
     [self makeUI];
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    //延时操作
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
-    });
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -55,6 +51,7 @@
     nameTF.text = nil;
     ageTF.text = nil;
     sexTF.text = nil;
+    phoneTF.text = nil;
     idTF.text = nil;
     describeTF.text = nil;
 }
@@ -160,10 +157,12 @@
     NSDictionary *user = @{@"id": idTF.text, @"name": nameTF.text, @"age": ageTF.text, @"sex":sexTF.text, @"phone":phoneTF.text, @"describe":describeTF.text};
     [store putObject:user withId:idTF.text intoTable:tableName];
     //先取出原来的
-    NSDictionary *dic = [store getObjectById:@"1" fromTable:@"user_table"];
+    NSDictionary *dic = [store getObjectById:@"101101011244101101011244" fromTable:@"user_table"];
     if (dic) {
         [array removeAllObjects];
         [nameArray removeAllObjects];
+        [array addObject:idTF.text];
+        [nameArray addObject:nameTF.text];
         NSMutableArray *arr = dic[@"id"];
         for (int i = 0 ; i < arr.count; i++) {
             [array addObject:arr[i]];
@@ -171,12 +170,9 @@
         }
     }
     
-    [array addObject:idTF.text];
-    [nameArray addObject:nameTF.text];
-    
     NSDictionary *dict = @{@"id":array,@"table":nameArray};
     [store createTableWithName:@"user_table"];
-    [store putObject:dict withId:@"1" intoTable:@"user_table"];
+    [store putObject:dict withId:@"101101011244101101011244" intoTable:@"user_table"];
     
     //返回
     [self leftButtonAction:nil];

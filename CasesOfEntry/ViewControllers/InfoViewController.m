@@ -15,8 +15,8 @@
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView * myTableV;
-    NSMutableArray *informationArr;
-    NSMutableArray *infoArray;
+    NSMutableArray *informationArr;//列表显示数组
+    NSMutableArray *infoArray;//搜索结果显示列表数组
     UILabel *label;
     
     AddMoreViewController *vc;
@@ -62,11 +62,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     store = [[YTKKeyValueStore alloc] initDBWithName:@"test.db"];
-    NSDictionary *dic = [store getObjectById:@"1" fromTable:@"user_table"];
+    NSDictionary *dic = [store getObjectById:@"101101011244101101011244" fromTable:@"user_table"];
     
     if (dic) {
         [informationArr removeAllObjects];
         NSMutableArray *idArray = dic[@"id"];
+        //倒叙添加，保证能够后添加的最上方显示
         for (int i = 0; i < idArray.count; i++) {
             NSDictionary *queryUser = [store getObjectById:idArray[i] fromTable:dic[@"table"][i]];
             [informationArr addObject:queryUser];
@@ -169,7 +170,6 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
     if (tableView == myTableV) {
         if (informationArr.count != 0) {
             cell.textLabel.text = informationArr[indexPath.section][@"name"];
@@ -224,7 +224,7 @@
         //①.删除后台数据
         
         //②.删除本地数据
-        NSDictionary *dic = [store getObjectById:@"1" fromTable:@"user_table"];
+        NSDictionary *dic = [store getObjectById:@"101101011244101101011244" fromTable:@"user_table"];
         if (dic) {
             
             if (searchDisplayController.searchBar.text.length != 0) {
@@ -243,7 +243,7 @@
                         
                         NSDictionary *dict = @{@"id":idArray,@"table":nameArray};
                         [store createTableWithName:@"user_table"];
-                        [store putObject:dict withId:@"1" intoTable:@"user_table"];
+                        [store putObject:dict withId:@"101101011244101101011244" intoTable:@"user_table"];
                         
                         [store deleteObjectById:dic[@"id"][i] fromTable:dic[@"table"][i]];
                         [informationArr removeObjectAtIndex:i];
@@ -267,7 +267,7 @@
                 
                 NSDictionary *dict = @{@"id":idArray,@"table":nameArray};
                 [store createTableWithName:@"user_table"];
-                [store putObject:dict withId:@"1" intoTable:@"user_table"];
+                [store putObject:dict withId:@"101101011244101101011244" intoTable:@"user_table"];
                 
                 [store deleteObjectById:dic[@"id"][recordSection] fromTable:dic[@"table"][recordSection]];
                 
